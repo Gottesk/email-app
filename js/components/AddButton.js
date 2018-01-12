@@ -10,13 +10,14 @@ import {
 
 export default class AddButton extends React.Component {
     render() {
-      const navigate = this.props.navigation;
+      const navigate = this.props.navigate;
+      console.log('11111', this.props.navigate);
       return (
         <View style={styles.container}>
           <TouchableOpacity 
             style={styles.button} 
             onPress={() =>
-              navigate('NewMail', { name: 'Jane' })
+              navigate('NewMail', { navigate: navigate })
             }>
             <Text style={styles.icon}>+</Text>
           </TouchableOpacity>
@@ -25,25 +26,25 @@ export default class AddButton extends React.Component {
     }
   }
 
-  const styles = StyleSheet.create({
-    container: {
-        alignItems:'flex-end',
-        justifyContent:'flex-end',
-        flex: 1, 
-        flexDirection: 'row',
-        marginRight: 20,
-        marginBottom: 20
+const styles = StyleSheet.create({
+  container: {
+      alignItems:'flex-end',
+      justifyContent:'flex-end',
+      flex: 1, 
+      flexDirection: 'row',
+      marginRight: 20,
+      marginBottom: 20
+  },
+  button: {
+      alignItems:'center',
+      justifyContent:'center',
+      width:60,
+      height:60,
+      backgroundColor:'steelblue',
+      borderRadius:30
     },
-    button: {
-        alignItems:'center',
-        justifyContent:'center',
-        width:60,
-        height:60,
-        backgroundColor:'steelblue',
-        borderRadius:30
-      },
-    icon: {
-        fontSize: 20,
-        color: 'white'
-    }
-  });
+  icon: {
+      fontSize: 20,
+      color: 'white'
+  }
+});

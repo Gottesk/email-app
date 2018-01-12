@@ -13,15 +13,14 @@ export default class NewMailScreen extends React.Component {
     title: 'Feed',
   };
   render() {
-    const navigate = this.props.navigation;
-    const item = this.props.navigation.state.params.item;
-    
+    const { navigate } = this.props.navigation;
     return (
         <View>
+          <Text>Here is the new email screen</Text>
           <Button
-            title="Go to profile screen"
+            title="Send it!"
             onPress={() =>
-              navigate('Profile', { name: 'Jane' })
+              navigate('Feed', { name: 'Jane' })
             }
           />
         </View>
